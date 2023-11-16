@@ -49,8 +49,8 @@ async def notice(event):
 async def source(event):
     await event.edit(source_text,
                     buttons=[[
-                         Button.url("FOR PERSONAL USE", url="https://github.com/vasusen-code/videoconvertor/tree/main"),
-                         Button.url("FOR YOUR CHANNEL ", url="https://github.com/vasusen-code/videoconvertor/")]])
+                         Button.url("FOR PERSONAL USE", url="https://r.mtdv.me/github.comOtakubhaiVIDEOENCODER"),
+                         Button.url("FOR YOUR CHANNEL ", url="https://r.mtdv.me/github.comOtakubhaiVIDEOENCODER")]])
                          
                     
 @Drone.on(events.callbackquery.CallbackQuery(data="help"))
@@ -99,11 +99,11 @@ async def remt(event):
 @Drone.on(events.callbackquery.CallbackQuery(data="restart"))
 async def res(event):
     if not f'{event.sender_id}' == f'{int(AUTH_USERS)}':
-        return await event.edit("Only authorized user can restart!")
+        return await event.edit("Sirf authorized users restart kar sakte, jo ki tu nai he!")
     result = await heroku_restart()
     if result is None:
         await event.edit("You have not filled `HEROKU_API` and `HEROKU_APP_NAME` vars.")
     elif result is False:
-        await event.edit("An error occured!")
+        await event.edit("Pata nai kya hogaya bencho!")
     elif result is True:
-        await event.edit("Restarting app, wait for a minute.")
+        await event.edit("Restarting app, Ruk na laude.")
